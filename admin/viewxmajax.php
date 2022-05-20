@@ -63,5 +63,34 @@
     <p class="form-control" id="p6">Point:</p>
                 </div>
 
+                <script>
+
+        let btnChange = document.querySelector("#btnChange");
+
+        btnChange.addEventListener('click', () => {
+        let exam_id = prompt("Please enter the exam id:");
+        fetch('http://localhost/ProgBlog/admin/view_exam_backend.php?exam_id='+exam_id )
+            .then(response => response.json())
+            .then(json => {
+                let p1 = document.querySelector("#p1");
+                let p2 = document.querySelector("#p2");
+                let p3 = document.querySelector("#p3");
+        let p4 = document.querySelector("#p4");
+        let p5 = document.querySelector("#p5");
+        let p6 = document.querySelector("#p6");
+
+                p1.innerHTML ="Exam ID: " +json['content'][0]['exam_id'];
+                p2.innerHTML ="Exam Title: " +json['content'][0]['exam_title'];
+                p3.innerHTML ="Exam Date And Time: " +json['content'][0]['exam_datetime'];
+        p4.innerHTML ="Question: " +json['content'][0]['question'];
+        p5.innerHTML ="Solution:" +json['content'][0]['solution'];
+        p6.innerHTML ="Point: " +json['content'][0]['point'];
+
+
+            })
+        });
+
+        </script>
+
     </body>
 </html>
