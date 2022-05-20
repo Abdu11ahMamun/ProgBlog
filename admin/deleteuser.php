@@ -52,6 +52,20 @@
 		<div><button class="btn btn-danger" id="btnChange">Delete User</button></div>	
 		<p class="text-info" id="p2"></p>
 	</div>	
+	<script>
+
+		let btnChange = document.querySelector("#btnChange");
 	
+		btnChange.addEventListener('click', () => {
+		let id = prompt("Please enter Member ID:");
+		fetch('http://localhost/ProgBlog/admin/confirmdelete.php?id='+id )
+			.then(response => response.json())
+			.then(json => {				
+				let p2 = document.querySelector("#p2");
+				p2.innerHTML =""+ json['content'];			
+			})
+		});
+
+	</script>
 	</body>
 </html>
