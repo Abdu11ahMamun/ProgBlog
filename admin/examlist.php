@@ -35,6 +35,9 @@ $i=1;
                 <li class="nav-item">
                     <a class="nav-link" href="userlist.php">Member List</a>
                 </li>
+                <li class="nav-item">
+                      <a class="nav-link active" href="adminlist.php">User List</a>
+                    </li>
 				<li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
                 </li>
@@ -57,6 +60,9 @@ $i=1;
 
                     <li class="nav-item">
                       <a class="nav-link " href="userlist.php">Member List</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="adminlist.php">User List</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link active" href="examlist.php">Exam List</a>

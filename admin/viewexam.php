@@ -57,6 +57,9 @@ if (!isset($_GET['viewexamid'])|| $_GET['viewexamid'] == NULL) {
                 <li class="nav-item">
                     <a class="nav-link" href="userlist.php">Member List</a>
                 </li>
+                <li class="nav-item">
+                      <a class="nav-link active" href="adminlist.php">User List</a>
+                    </li>
 				<li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
                 </li>
