@@ -25,31 +25,17 @@
                     <a class="nav-link" href="index.php">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="profile.php">User Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="inbox.php">Inbox</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="postlist.php">Visit Website</a>
                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="login_as.php">Login</a>
+                </li>
 
-                <li class="nav-item">
-				<?php //if(Session::get('userRole')=='1'){ ?>
-                    <a class="nav-link" href="adduser.php">Add User</a>
-					<?php //} ?>
-				
-				</li>
-                <li class="nav-item">
-                    <a class="nav-link" href="userlist.php">User List</a>
-                </li>
-				<li class="nav-item">
-                    <a class="nav-link" href="logout.php">Logout</a>
-                </li>
+              
                 
                 <form action="searchprocess.php" method="get" class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-1" type="text" name="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-5 my-sm-0" name="submit" type="submit">Search</button>
+                <button class="btn btn-outline-success my-5 my-sm-0"  type="submit">Search</button>
                 
             </ul>
         </div>
