@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +23,17 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="home.php">Dashboard</a>
                 </li>
-            <li class="nav-item">
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.php">User Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="inbox.php">Inbox</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="postlist.php">Visit Website</a>
+                </li>
+
+                <li class="nav-item">
 				<?php //if(Session::get('userRole')=='1'){ ?>
                     <a class="nav-link" href="adduser.php">Add User</a>
 					<?php //} ?>
@@ -49,7 +57,23 @@
 
 		    <p id="p1"></p>
                
+         <script>
 
+let btnChange = document.querySelector("#catadd");
+
+btnChange.addEventListener('click', () => {
+let catname = prompt("Enter new cat name:" );
+
+        fetch('http://localhost/pro/admin/catBack.php?catname='+catname)
+            .then(response => response.json())
+            .then(json => {
+                let p1 = document.querySelector("#p1");
+                p1.innerHTML =""+ json['content'];
+            })
+        });
+
+
+</script>
             
 </body>
 </html>
