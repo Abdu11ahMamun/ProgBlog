@@ -54,6 +54,8 @@
                 <input class="form-control" type="Password" id="password" name="password" placeholder="Password" required><br>
                 <input href="" class="btn btn-danger col-2 " type="submit" value="Login"><br><br>
             </form>
+
+            <p><a href="memberReg.php" class="btn-outline-danger">Want to Register yourself here?</a></p>
             
 
 

@@ -31,6 +31,7 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="home.php">Dashboard</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="adduser.php">Add User</a>
 				</li>

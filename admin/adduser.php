@@ -34,6 +34,7 @@
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="home.php">Dashboard</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="adduser.php">Add User</a>
 				</li>
@@ -102,7 +103,7 @@
                                     <option value="1">Admin</option>
                                     <option value="2">Author</option>
                                     <option value="3">Editor</option>
-                                    <option value="4">Member</option>
+                                   
                                 </select>
                             </td>
                         </tr>
