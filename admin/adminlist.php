@@ -108,7 +108,39 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
 						</tr>
 					</thead>
 					<tbody>
+<?php
+	
+	$post = mysqli_query( $connect, "SELECT * from tbl_user")
+		or die("Can not execute query");
+if($post){   
+			$i=0;
+			while ($result = $post->fetch_assoc()) {
+			$i++;
+?>
 
+
+						<tr class="odd gradeX" >
+							<td ><?php echo $i; ?></td>
+                            <td ><?php echo $result['id']; ?></td>
+							<td ><?php echo $result['name']; ?></td>
+							<td ><?php echo $result['username']; ?></td>
+							<td ><?php echo $result['email']; ?></td>
+							<td ><?php echo $result['details']; ?></td>
+							<td ><?php
+                                    if($result['role']=='1'){
+                                        echo "Admin";
+                                    }elseif($result['role']=='2'){
+                                        echo "Author";
+                                    }elseif($result['role']=='3'){
+                                        echo "Editor";
+                                    }elseif($result['role']=='4'){
+                                        echo "Member";
+                                    }
+                            
+                            
+                            ?></td>
+		
+                        <?php }} ?>
                        
 					</tbody>
 				</table>
