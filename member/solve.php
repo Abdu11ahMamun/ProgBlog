@@ -1,3 +1,16 @@
+<?php
+session_start();
+require_once('dbconfig.php');
+$connect = mysqli_connect( HOST, USER, PASS, DB )
+    or die("Can not connect");	
+
+?>
+<?php
+if (!isset($_GET['questionid'])|| $_GET['questionid'] == NULL) {
+    echo "<script>window.location = 'question_list.php';</script>"; 
+}else {
+    $postid = $_GET['questionid'];
+}?>
 
 
 
@@ -106,7 +119,15 @@
                        {
                         $actual_sol= $postresult['solution'];
                         if($actual_sol==$solution){
-                           
+                            $total_points=$total_points+$postresult['point'];
+                            $updated_row = mysqli_query( $connect, "UPDATE tbl_member SET total_points='$total_points' where username= '$uname'")
+                            or die("Can not execute query");
+                       
+                              if ($updated_row) {
+                                  echo "<span class='text-center text-success' >congratulations you solved it successfully! </span>";
+                              }else{
+                               echo "<span class='text-center text-success'>congratulations you solved it successfully! but got no point!</span>";
+                              }
                             
                         }else{
                             echo "<span class='text-center text-danger'>Sorry, The answer did not match. Try again</span>";
