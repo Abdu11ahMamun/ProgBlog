@@ -54,6 +54,34 @@
 		
 
 		
+	<script>
+
+		let btnChange = document.querySelector("#btnChange");
 	
+		btnChange.addEventListener('click', () => {
+		let id = prompt("Please enter the id:");
+		fetch('http://localhost/ProgBlog/admin/viewadmin_backend.php?id='+id )
+			.then(response => response.json())
+			.then(json => {
+				let p1 = document.querySelector("#p1");
+				let p2 = document.querySelector("#p2");
+				let p3 = document.querySelector("#p3");
+                let p4 = document.querySelector("#p4");
+			
+				p1.innerHTML ="ID: " +json['content'][0]['id'];
+				p2.innerHTML ="User Name: " +json['content'][0]['username'];
+				p3.innerHTML ="Email: " +json['content'][0]['email'];	
+				if(json['content'][0]['role'] == 1){			
+					p4.innerHTML = 'Role: Admin';
+				}else if(json['content'][0]['role'] == 2){
+					p4.innerHTML = 'Role: Author';
+				}else if(json['content'][0]['role'] == 3){
+					p4.innerHTML = 'Role: Editor';
+				}
+
+			})
+		});
+
+	</script>
 	</body>
 </html>
