@@ -68,7 +68,24 @@
 
                 <h2>Add New User</h2>
            
-                  
+                   <?php
+                   if (isset($_POST['username']) && !empty($_POST['username']) && !empty($_POST['password'])&&isset($_POST['password'])){
+		        	   $username=$_POST['username'];
+		        	   $password=md5($_POST['password']);
+		        	   $role=$_POST['role'];
+
+                       if (empty($username)||empty($password)||empty($role))
+                       {
+                           echo "<span class='error'>Field must not be empty! </span>";
+                       }else
+                       {
+                        $catinsert = mysqli_query( $connect, "INSERT INTO tbl_user(username,password,role)  VALUES ('$username','$password','$role')")
+                        or die("Can not execute query");
+                    
+
+                       }
+                   }
+                   ?>
                  <form class='form' action="" method="post">
                     <table  class="form-control">					
                         <tr>
