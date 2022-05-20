@@ -52,7 +52,16 @@
     </nav>
         <div class="container">
     <br>
-
+    <a href="examlist.php"><input class="btn btn-success"id="home" type="button" name="" value="Exam List"></a> <br> <br>
+		<div><button class="btn-warning" id="btnChange">View Exam</button></div>
+        <br>
+    <p class="form-control" id="p1"> Exam ID:</p>
+		<p class="form-control" id="p2">Exam Title:</p>
+		<p class="form-control" id="p3">Exam Date And Time:</p>
+		<p class="form-control" id="p4">Question:</p>
+    <p class="form-control" id="p5">Solution:</p>
+    <p class="form-control" id="p6">Point:</p>
+                </div>
 
     </body>
 </html>
