@@ -61,7 +61,26 @@
                 <a href="memberprofile.php" class="btn btn-success"  >Back To Profile</a><br>
                 <h2>Update Profile</h2>
            
-                   
+                   <?php
+                   if (isset($_POST['name']) &&  !empty($_POST['name']) && isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password']) && !empty($_POST['password'])){
+                       $name=$_POST['name'];	        	   
+                       $email=$_POST['email'];
+		        	   $password=md5($_POST['password']);
+                       $username=$_SESSION['username'];
+                        $updateuser = mysqli_query( $connect, "UPDATE tbl_member SET name='$name', email='$email',password='$password' WHERE username='$username'")
+                        or die("Can not execute query");
+                         if($updateuser)
+                         {
+                            echo "<span class='success'>User Updated Successfully </span>";
+                         }
+                         else
+                         {
+                            echo "<span class='error'>Not Updated</span>";
+                         }
+
+                       
+                   }
+                   ?>
                  <form class='form' action="" method="post">
                      <?php
                         $username=$_SESSION['username'];
