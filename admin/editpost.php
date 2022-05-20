@@ -68,14 +68,14 @@ if (!isset($_GET['editpostid'])|| $_GET['editpostid'] == NULL) {
 
         if(isset($_FILES['image'])){
             $var5=$_FILES['image'];
-            move_uploaded_file($var5['tmp_name'],"img/$title.jpg");
+            move_uploaded_file($var5['tmp_name'],"../images/$title.jpg");
         }
       
 
         if (empty($title)||empty($cat)||empty($body)||empty($tags)||empty($author)){
             echo "<span class='error'>Field must not be empty ! </span>";//3
        }else{
-        $updated_row = mysqli_query( $connect, "UPDATE tbl_post SET cat ='$cat',title ='$title',body ='$body',author ='$author',tags ='$tags',image='img/$title.jpg' where id= '$postid'")
+        $updated_row = mysqli_query( $connect, "UPDATE tbl_post SET cat ='$cat',title ='$title',body ='$body',author ='$author',tags ='$tags',image='../images/$title.jpg' where id= '$postid'")
         or die("Can not execute query");
    
           if ($updated_row) {
