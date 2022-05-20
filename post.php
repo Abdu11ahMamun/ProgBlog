@@ -85,7 +85,10 @@
         </div>
         <div class="card-footer text-muted">
         <p class="card-title"><?php echo $result['date'];?>, By <a href="#"><?php echo $result['author'];?></p>
+       
         <a href="addcomment.php?post_id=<?php echo $result['id'];?>" class="btn btn-success">Comment</a>
+        <a href="viewcomment.php?post_id=<?php echo $result['id'];?>" class="btn btn-success">View Comment</a>
+
        
             
         </div>
