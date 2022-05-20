@@ -53,7 +53,58 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
         </div>
     </nav>
 
+<div class="container"> 
+    <br>
+    <br>
+<div class="card text-center">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="memberprofile.php">Profile</a>
+                    </li> 
+                  </ul>
+            </div>
+        
+                <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                      
 
+                        <a href="UpdateProfile.php" class="btn btn-success"  >Update Profile</a>
+
+                       
+                    </div>
+                </div>
+            </div>
+                
+
+
+<div class="card-body">
+                <div class="table-responsive">
+                    <table id="" class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+							
+                            <th >ID</th>
+							<th >Name</th>
+							<th >Username</th>
+							<th >Email</th>
+							<th >Points</th>
+							
+							
+						</tr>
+					</thead>
+					<tbody>
+
+                       
+					</tbody>
+				</table>
+                
+
+                </div>
+                </div>
+           
+    
 </body>
 </html>
 
