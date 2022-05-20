@@ -64,7 +64,7 @@ let btnChange = document.querySelector("#catadd");
 btnChange.addEventListener('click', () => {
 let catname = prompt("Enter new cat name:" );
 
-        fetch('http://localhost/pro/admin/catBack.php?catname='+catname)
+        fetch('http://localhost/ProgBlog/admin/catBack.php?catname='+catname)
             .then(response => response.json())
             .then(json => {
                 let p1 = document.querySelector("#p1");
