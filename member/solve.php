@@ -52,7 +52,10 @@
 <div class="container">
     <br>
     <h2>Question</h2>
-
+    <?php
+    $getpost = mysqli_query( $connect, "SELECT * from exam_table where exam_id='$postid' order by exam_id DESC")
+            or die("Can not execute query");
+             while($postresult= $getpost->fetch_assoc()){
             ?>              
             <table class="form-control">
             
@@ -83,6 +86,8 @@
                 </div>
         
 
+
+                
 
 
                 <form action="" method="post">
