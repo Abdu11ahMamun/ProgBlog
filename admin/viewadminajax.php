@@ -10,6 +10,38 @@
 
 </head>
 
-
+<body>
+        <!--Navigation part starts-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li>
+                <a class="navbar-brand" href="#">
+                  <img src="../images/pro_logo.png" width="50" height="50" alt="">
+                </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="home.php">Dashboard</a>
+                </li>
+                
+                <li class="nav-item">
+				<?php //if(Session::get('userRole')=='1'){ ?>
+                    <a class="nav-link" href="adduser.php">Add User</a>
+					<?php //} ?>
+				
+				</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="userlist.php">Member List</a>
+                </li>
+                <li class="nav-item">
+                      <a class="nav-link active" href="adminlist.php">User List</a>
+                    </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="logout.php">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+        
 	</body>
 </html>
