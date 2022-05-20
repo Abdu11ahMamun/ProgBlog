@@ -1,21 +1,21 @@
 <?php
-	require_once('dbconfig.php');
-	$connect = mysqli_connect( HOST, USER, PASS, DB )
-		or die("Can not connect");	
+    require_once('dbconfig.php');
+    $connect = mysqli_connect( HOST, USER, PASS, DB )
+        or die("Can not connect");
 
-	
+    
 
-			$per_page = 3;
-			if(isset($_GET["page"])){
-				$page = $_GET["page"];
-			}else{
-				$page=1;
-			}
-			$start_from=($page-1) * $per_page;
-		
+            $per_page = 3;
+            if(isset($_GET["page"])){
+                $page = $_GET["page"];
+            }else{
+                $page=1;
+            }
+            $start_from=($page-1) * $per_page;
+        
 
-	$post = mysqli_query( $connect, "SELECT * FROM tbl_post limit $start_from,$per_page" )
-		or die("Can not execute query");
+    $post = mysqli_query( $connect, "SELECT * FROM tbl_post limit $start_from,$per_page" )
+        or die("Can not execute query");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,27 +44,18 @@
                     <a class="nav-link" href="index.php">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="profile.php">User Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="inbox.php">Inbox</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="postlist.php">Visit Website</a>
                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="login_as.php">Login</a>
+                </li>
 
-                <li class="nav-item">
-				<?php //if(Session::get('userRole')=='1'){ ?>
-                    <a class="nav-link" href="adduser.php">Add User</a>
-					<?php //} ?>
-				
-				</li>
-                <li class="nav-item">
-                    <a class="nav-link" href="userlist.php">User List</a>
-                </li>
-				<li class="nav-item">
-                    <a class="nav-link" href="{%url 'admin_login'%}">Logout</a>
-                </li>
+              
+                
+                <form action="searchprocess.php" method="get" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-1" type="text" name="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-5 my-sm-0"  type="submit">Search</button>
+                
             </ul>
         </div>
     </nav>
@@ -79,21 +70,21 @@
 
 
     <div class="container">
-	
-	<?php
-	if($post){
-	while($result=$post->fetch_assoc()){
-	?>
+    
+    <?php
+    if($post){
+    while($result=$post->fetch_assoc()){
+    ?>
 
-	<div class=" ">
+    <div class=" ">
 
-	<div class="card text-center">
+    <div class="card text-center">
   <div class="card-header">
   <h5 class="card-title"><a href="post.php?id=<?php echo $result['id'];?>"><?php echo $result['title'];?></a></h5>
   <p class="card-title">By <?php echo $result['author'];?></a></p>
   </div>
   <div class="card-body">
-  <img class="card-img-top" src="admin/<?php echo $result['image']?>" alt="Card image cap">
+  <img class="card-img-top"  style="width:150px; height:150px" src="admin/<?php echo $result['image']?>" alt="Card image cap">
     <p class="card-text"><?php echo $result['body'];?></p>
     <a href="post.php?id=<?php echo $result['id'];?>" class="btn btn-primary">Read More</a>
   </div>
@@ -103,41 +94,41 @@
 </div>
 <br>
 <br>
-	
-		<?php } ?> <!--END WHILE LOOP-->
+    
+        <?php } ?> <!--END WHILE LOOP-->
 
-		<!--Pagination-->
-		<?php 
-		
-		$result= mysqli_query( $connect, "SELECT * FROM tbl_post" )
-		or die("Can not execute query");
-		$total_rows= mysqli_num_rows($result);
-		$total_pages=ceil($total_rows/$per_page);
-		?>
-		
+        <!--Pagination-->
+        <?php
+        
+        $result= mysqli_query( $connect, "SELECT * FROM tbl_post" )
+        or die("Can not execute query");
+        $total_rows= mysqli_num_rows($result);
+        $total_pages=ceil($total_rows/$per_page);
+        ?>
+        
 
-		<nav aria-label="Page navigation example">
- 		 <ul class="pagination justify-content-center">
-    	<li class="page-item ">
-			<?php
-			echo "<span class='page-link'><a href='index.php?page=1'>".'First Page'."</a>";
-			?>	
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+        <li class="page-item ">
+            <?php
+            echo "<span class='page-link'><a href='index.php?page=1'>".'First Page'."</a>";
+            ?>
 
-    		</li>
-		<?php	for($i=1;$i<=$total_pages;$i++){
-			echo "<li class='page-item'><a class='page-link' href='index.php?page=".$i."'>".$i."</a> </li>" ;
-		}?>
-			<?php echo "<li class='page-item'><a class='page-link'  href='index.php?page=$total_pages'>".'Last Page'."</a> </li>" ; ?>
-		
-		</ul>
-		</nav>
+            </li>
+        <?php    for($i=1;$i<=$total_pages;$i++){
+            echo "<li class='page-item'><a class='page-link' href='index.php?page=".$i."'>".$i."</a> </li>" ;
+        }?>
+            <?php echo "<li class='page-item'><a class='page-link'  href='index.php?page=$total_pages'>".'Last Page'."</a> </li>" ; ?>
+        
+        </ul>
+        </nav>
 
-		<?php 
+        <?php
 }
-		?>
+        ?>
     
 
-	</div>
+    </div>
 
 
 
