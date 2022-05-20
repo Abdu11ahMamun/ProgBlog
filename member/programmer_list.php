@@ -16,6 +16,41 @@ $i=1;
 
 </head>
 
+<body>
+       <!--Navigation part starts-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li>
+                <a class="navbar-brand" href="#">
+                  <img src="../images/pro_logo.png" width="50px" height="50px" alt="">
+                </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="memberhome.php">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="memberprofile.php">User Profile</a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="addpost.php">Add New Post</a>
+                </li>
+
+				<li class="nav-item">
+                    <a class="nav-link" href="question_list.php">Problems</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="programmer_list.php">Top Coders</a>
+                </li>
+               
+
+				<li class="nav-item">
+                    <a class="nav-link" href="logout.php">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
 
 
