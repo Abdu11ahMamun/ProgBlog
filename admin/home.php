@@ -32,16 +32,7 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
                 <li class="nav-item active">
                     <a class="nav-link" href="home.php">Dashboard</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.php">User Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="inbox.php">Inbox</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="postlist.php">Visit Website</a>
-                </li>
-
+                
                 <li class="nav-item">
 				<?php //if(Session::get('userRole')=='1'){ ?>
                     <a class="nav-link" href="adduser.php">Add User</a>

@@ -30,15 +30,8 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
                 <li class="nav-item active">
                     <a class="nav-link" href="home.php">Dashboard</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.php">User Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="inbox.php">Inbox</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="home.php">Visit Website</a>
-                </li>
+               
+             
 
                 <li class="nav-item">
 				<?php //if(Session::get('userRole')=='1'){ ?>
@@ -79,7 +72,7 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
                 <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="panel-title" >User List</h3>
+                        <h3 class="panel-title" >Member List</h3>
                         
 
                         <a href="viewuser.php" class="btn btn-success"  >View User</a>
@@ -89,23 +82,7 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
                 </div>
             </div>
                 
-                <?php
-                //Category Delete
-                if (isset($_GET['deluser'])){
-                    $deluser= $_GET['deluser'];
-                    $delquey = mysqli_query( $connect, "DELETE from tbl_user where id='$deluser' ")
-		or die("Can not execute query");
-                
-                    if( $delquey )
-                         {
-                            echo "<span class='text-center'>User Deleted Successfully </span>";
-                         }
-                         else
-                         {
-                            echo "<span class='text-center'>User Not Deleted  ! </span>";
-                         }
-                }
-                ?>
+               
 
 <div class="card-body">
                 <div class="table-responsive">
@@ -117,15 +94,15 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
 							<th >Name</th>
 							<th >Username</th>
 							<th >Email</th>
-							<th >Details</th>
-							<th >Role</th>
-							<!-- <th >Action</th> -->
+							<th >Total Point</th>
+							
+						
 						</tr>
 					</thead>
 					<tbody>
 <?php
 	
-	$post = mysqli_query( $connect, "SELECT * from tbl_user")
+	$post = mysqli_query( $connect, "SELECT * from tbl_member")
 		or die("Can not execute query");
 if($post){   
 			$i=0;
@@ -140,24 +117,11 @@ if($post){
 							<td ><?php echo $result['name']; ?></td>
 							<td ><?php echo $result['username']; ?></td>
 							<td ><?php echo $result['email']; ?></td>
-							<td ><?php echo $result['details']; ?></td>
-							<td ><?php
-                                    if($result['role']=='1'){
-                                        echo "Admin";
-                                    }elseif($result['role']=='2'){
-                                        echo "Author";
-                                    }elseif($result['role']=='3'){
-                                        echo "Editor";
-                                    }elseif($result['role']=='4'){
-                                        echo "Member";
-                                    }
-                            
-                            
-                            ?></td>
-							<!-- <td ><a href="viewUser.php?userid=<?php echo $result['id']; ?>">View</a>
+							<td ><?php echo $result['total_points']; ?></td>
+						
+							
                             
 
-                            ||<a onclick="return confirm ('Do you really want to delete!'); "href="?deluser=<?php echo $result['id'];?>">Delete</a></td> -->
                         </tr>
                         <?php }} ?>
                        
