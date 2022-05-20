@@ -55,7 +55,119 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
             </ul>
         </div>
     </nav>
+<div class="container"> 
+    <br>
+    <br>
+<div class="card text-center">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link  " href="home.php">Post list</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="catlist.php">Category List</a>
+                    </li>
 
+                    <li class="nav-item">
+                      <a class="nav-link active" href="userlist.php">User List</a>
+                    </li>
+                  
+                    
+                  </ul>
+            </div>
+        
+                <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="panel-title" >User List</h3>
+                        
+
+                        <a href="viewuser.php" class="btn btn-success"  >View User</a>
+
+                        <a href="deleteuser.php" class="btn btn-success"  >Delete User</a>
+                    </div>
+                </div>
+            </div>
+                
+                <?php
+                //Category Delete
+                if (isset($_GET['deluser'])){
+                    $deluser= $_GET['deluser'];
+                    $delquey = mysqli_query( $connect, "DELETE from tbl_user where id='$deluser' ")
+		or die("Can not execute query");
+                
+                    if( $delquey )
+                         {
+                            echo "<span class='text-center'>User Deleted Successfully </span>";
+                         }
+                         else
+                         {
+                            echo "<span class='text-center'>User Not Deleted  ! </span>";
+                         }
+                }
+                ?>
+
+<div class="card-body">
+                <div class="table-responsive">
+                    <table id="" class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+							<th >Serial No.</th>
+                            <th >ID</th>
+							<th >Name</th>
+							<th >Username</th>
+							<th >Email</th>
+							<th >Details</th>
+							<th >Role</th>
+							<!-- <th >Action</th> -->
+						</tr>
+					</thead>
+					<tbody>
+<?php
+	
+	$post = mysqli_query( $connect, "SELECT * from tbl_user")
+		or die("Can not execute query");
+if($post){   
+			$i=0;
+			while ($result = $post->fetch_assoc()) {
+			$i++;
+?>
+
+
+						<tr class="odd gradeX" >
+							<td ><?php echo $i; ?></td>
+                            <td ><?php echo $result['id']; ?></td>
+							<td ><?php echo $result['name']; ?></td>
+							<td ><?php echo $result['username']; ?></td>
+							<td ><?php echo $result['email']; ?></td>
+							<td ><?php echo $result['details']; ?></td>
+							<td ><?php
+                                    if($result['role']=='1'){
+                                        echo "Admin";
+                                    }elseif($result['role']=='2'){
+                                        echo "Author";
+                                    }elseif($result['role']=='3'){
+                                        echo "Editor";
+                                    }elseif($result['role']=='4'){
+                                        echo "Member";
+                                    }
+                            
+                            
+                            ?></td>
+							<!-- <td ><a href="viewUser.php?userid=<?php echo $result['id']; ?>">View</a>
+                            
+
+                            ||<a onclick="return confirm ('Do you really want to delete!'); "href="?deluser=<?php echo $result['id'];?>">Delete</a></td> -->
+                        </tr>
+                        <?php }} ?>
+                       
+					</tbody>
+				</table>
+                
+
+                </div>
+                </div>
+           
     
 </body>
 </html>
