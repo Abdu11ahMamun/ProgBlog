@@ -60,7 +60,7 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
                     </li>
 
                     <li class="nav-item">
-                      <a class="nav-link " href="userlist.php">User List</a>
+                      <a class="nav-link " href="userlist.php">Member List</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link " href="examlist.php">Exam List</a>
