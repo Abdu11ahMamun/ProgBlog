@@ -63,7 +63,48 @@
 
 
 
-    
+    <div class="container">
+    <br>
+
+                <h2>Add New User</h2>
+           
+                  
+                 <form class='form' action="" method="post">
+                    <table  class="form-control">					
+                        <tr>
+                            <td><label>Username</label></td>
+                            <td>
+                                <input class='form-control' type="text" name="username" placeholder="Enter Usename..." class="medium" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><label>Password</label></td>
+                            <td>
+                                <input class='form-control' type="password" name="password" placeholder="Enter Password..." class="medium" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>User Role</label></td>
+                            <td>
+                                <select class='form-control' id="select" name="role">
+                                    <option>Select User Role</option>
+                                    <option value="1">Admin</option>
+                                    <option value="2">Author</option>
+                                    <option value="3">Editor</option>
+                                    <option value="4">Member</option>
+                                </select>
+                            </td>
+                        </tr>
+
+						<tr> 
+                            <td></td>
+                            <td>
+                                <input class='btn btn-danger' type="submit" name="submit" Value="Create" />
+                            </td>
+                        </tr>
+                    </table>
+                    </form>
             
 </body>
 </html>
