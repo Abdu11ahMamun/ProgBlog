@@ -107,6 +107,17 @@ if($post){
 ?>
 
 
+						<tr class="odd gradeX" >
+							
+                            <td ><?php echo $result['id']; ?></td>
+							<td ><?php echo $result['name']; ?></td>
+							<td ><?php echo $result['username']; ?></td>
+							<td ><?php echo $result['email']; ?></td>
+							<td ><?php echo $result['total_points']; ?></td>
+							
+							
+                        </tr>
+                        <?php }} ?>
                        
 					</tbody>
 				</table>
