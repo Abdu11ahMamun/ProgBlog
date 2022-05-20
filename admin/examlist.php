@@ -49,7 +49,7 @@ $i=1;
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
-                      <a class="nav-link active " href="home.php">Post list</a>
+                      <a class="nav-link  " href="home.php">Post list</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link " href="catlist.php">Category List</a>
@@ -59,7 +59,7 @@ $i=1;
                       <a class="nav-link " href="userlist.php">User List</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link " href="examlist.php">Exam List</a>
+                      <a class="nav-link active" href="examlist.php">Exam List</a>
                     </li>
                     
                   </ul>

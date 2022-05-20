@@ -55,14 +55,14 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
-                      <a class="nav-link active " href="home.php">Post list</a>
+                      <a class="nav-link  " href="home.php">Post list</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link " href="catlist.php">Category List</a>
                     </li>
 
                     <li class="nav-item">
-                      <a class="nav-link " href="userlist.php">User List</a>
+                      <a class="nav-link active" href="userlist.php">Member List</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link " href="examlist.php">Exam List</a>
