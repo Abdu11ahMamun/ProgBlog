@@ -46,7 +46,9 @@
 				<li class="nav-item">
                     <a class="nav-link" href="question_list.php">Problems</a>
                 </li>
-               
+                <li class="nav-item">
+                    <a class="nav-link" href="programmer_list.php">Top Coders</a>
+                </li>
 
 				<li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
