@@ -6,7 +6,30 @@
 	
 
 
-        
+        if($_SERVER['REQUEST_METHOD'] =='POST'){
+			$username=$_POST['username'];
+            
+			$password=md5($_POST['password']);
+            $result = mysqli_query( $connect, "SELECT * FROM tbl_user WHERE username='$username'  AND password='$password'")
+            or die("Can not execute query");
+			if($result!=false){
+				$value=mysqli_fetch_array($result);
+				$row=mysqli_num_rows($result);
+				if($row>0){
+                    session_start();
+                    $_SESSION['username']=$username;
+                    
+
+					 header("Location:memberhome.php");
+                   
+
+				}else{
+					echo "<span style='color:red;font-size:15px;'> No result found.</span>";
+				}
+			}else{
+				echo "<span style='color:red;font-size:15px;'> Name or password not matched.</span>";
+			}
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
