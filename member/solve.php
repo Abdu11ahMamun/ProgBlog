@@ -84,10 +84,39 @@
                                 <label for="point" class="form-label">Points </label>
                                 <input name="point"  cols="30" rows="2" class="form-control"  value="<?php echo $postresult['point']; ?>" readonly ></input>
                 </div>
-        
+                <?php
+                $uname= $_SESSION['username'];
+                $pointQuery = mysqli_query( $connect, "SELECT total_points from tbl_member where username='$uname'")
+                or die("Can not execute query");
+
+                $recevied_points= $pointQuery->fetch_assoc();
+                $total_points = $recevied_points['total_points']
+
+                ?>
 
 
+                <?php
+               if (isset($_POST['solution']) && !empty($_POST['solution'])){
+		        	   $solution=$_POST['solution'];
+
+                       if (empty($solution))
+                       {
+                           echo "<span class='error'>Field must not be empty! </span>";
+                       }else
+                       {
+                        $actual_sol= $postresult['solution'];
+                        if($actual_sol==$solution){
+                           
+                            
+                        }else{
+                            echo "<span class='text-center text-danger'>Sorry, The answer did not match. Try again</span>";
+
+                        }
+
+                       }
+                 }
                 
+                ?>
 
 
                 <form action="" method="post">
