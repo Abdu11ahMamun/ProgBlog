@@ -58,7 +58,10 @@
 
     <div class="container">
     <br>
-      
+                <a href="memberprofile.php" class="btn btn-success"  >Back To Profile</a><br>
+                <h2>Update Profile</h2>
+           
+                   
                  <form class='form' action="" method="post">
                      <?php
                         $username=$_SESSION['username'];
