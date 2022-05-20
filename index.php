@@ -43,9 +43,6 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php">Dashboard</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="postlist.php">Visit Website</a>
-                </li>
                  <li class="nav-item">
                     <a class="nav-link" href="login_as.php">Login</a>
                 </li>
