@@ -5,6 +5,12 @@
         session_start();
 	
 ?>
+<?php 
+//if($_SESSION['userRole']=='1'){ 
+  //  echo "<script>window.location='index.php';</script>";
+//}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +57,35 @@
 
 <div class="container">
     <br>
+<?php
+    if (isset($_POST['title']) && !empty($_POST['cat']) && !empty($_POST['tags'])&&isset($_POST['author'])){
+        $title=$_POST['title'];
+        $cat=$_POST['cat'];
+        $body=$_POST['body'];
+        $tags=$_POST['tags'];
+        $author=$_POST['author'];
 
+        if(isset($_FILES['image'])){
+            $var4=$_FILES['image'];
+            move_uploaded_file($var4['tmp_name'],"../img/$title.jpg");
+        }
+        
+
+
+        if (empty($title)||empty($cat)||empty($body)||empty($tags)||empty($author)){
+                echo "<span class='error'>Field must not be empty ! </span>";//3
+        }else{
+            $inserted_rows = mysqli_query( $connect, "INSERT INTO tbl_post(cat, title, body, author, tags, image, userid) VALUES('$cat','$title','$body','$author','$tags','../img/$title.jpg','4')")
+            or die("Can not execute query");
+            if ($inserted_rows) {
+                echo "<span class='success'>Post Inserted Successfully. </span>";
+            }else{
+                echo "<span class='success'>Post Not Inserted. </span>";
+            }
+        }
+        
+    }
+    ?>
 
                     <form class="form-group" action="addpost.php" method="post" enctype="multipart/form-data">
             <table class="form-control">
@@ -70,7 +104,18 @@
                                 <label>Category</label>
                             </td>
                             <td>
-                              
+                                <select class="form-control" id="select" name="cat">
+                                    <option value="">Select Category</option>
+                                    <?php 
+                                     $category = mysqli_query( $connect, "SELECT * from tbl_category")
+                                     or die("Can not execute query");
+
+                                        if($category){
+                                            while($result= $category->fetch_assoc()){
+
+                                    ?>
+                                    <option value="<?php echo $result['id']; ?>"><?php echo $result['name']; ?></option>
+                                     <?php }} ?><!--2 -->
                                 </select>
                             </td>
                         </tr>
