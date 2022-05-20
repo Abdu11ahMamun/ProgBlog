@@ -56,7 +56,7 @@ $i=1;
                     </li>
 
                     <li class="nav-item">
-                      <a class="nav-link " href="userlist.php">User List</a>
+                      <a class="nav-link " href="userlist.php">Member List</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link active" href="examlist.php">Exam List</a>
@@ -70,9 +70,9 @@ $i=1;
                 <div class="row">
                     <div class="col-md-12">
                         <h3 class="panel-title" >Exam List</h3>
-                        <a href="add_exam.php" class="btn btn-success"  >Add Exam</a>
-                        <a href="viewxmajax.php" class="btn btn-success"  >View Exam</a>
-                        <a href="delete_exam.php" class="btn btn-success" >Delete Exam</a>
+                        <a href="add_exam.php" class="btn btn-success"  >Add Question</a>
+                        <a href="viewxmajax.php" class="btn btn-success"  >View Question</a>
+                        <a href="delete_exam.php" class="btn btn-success" >Delete Question</a>
                     </div>
                 </div>
             </div>
