@@ -63,10 +63,10 @@
            
                    <?php
                    if (isset($_POST['name']) &&  !empty($_POST['name']) && isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password']) && !empty($_POST['password'])){
-                       $name=$_POST['name'];	        	   
-                       $email=$_POST['email'];
-		        	   $password=md5($_POST['password']);
-                       $username=$_SESSION['username'];
+                    $name=$_POST['name'];	        	   
+                    $email=$_POST['email'];
+                    $password=md5($_POST['password']);
+                    $username=$_SESSION['username'];
                         $updateuser = mysqli_query( $connect, "UPDATE tbl_member SET name='$name', email='$email',password='$password' WHERE username='$username'")
                         or die("Can not execute query");
                          if($updateuser)
