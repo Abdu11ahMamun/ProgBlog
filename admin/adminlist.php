@@ -51,7 +51,73 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
             </ul>
         </div>
     </nav>
+<div class="container"> 
+    <br>
+    <br>
+    <div class="card text-center">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link  " href="home.php">Post list</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="catlist.php">Category List</a>
+                    </li>
 
+                    <li class="nav-item">
+                      <a class="nav-link " href="userlist.php">Member List</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="adminlist.php">User List</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="examlist.php">Exam List</a>
+                    </li>
+                    
+                  </ul>
+            </div>
+        
+                <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="panel-title" >User List</h3>
+                        
+
+                        <a href="viewuser.php" class="btn btn-success"  >View User</a>
+
+                        <a href="deleteuser.php" class="btn btn-success"  >Delete User</a>
+                    </div>
+                </div>
+            </div>
+                
+               
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="" class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+							<th >Serial No.</th>
+                            <th >ID</th>
+							<th >Name</th>
+							<th >Username</th>
+							<th >Email</th>
+							<th >Details</th>
+							<th >Role</th>
+							<!-- <th >Action</th> -->
+						</tr>
+					</thead>
+					<tbody>
+
+                       
+					</tbody>
+				</table>
+                
+
+                </div>
+                </div>
+           
+    
 </body>
 </html>
 
