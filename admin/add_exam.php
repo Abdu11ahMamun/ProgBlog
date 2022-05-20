@@ -49,7 +49,7 @@
 				
 				</li>
                 <li class="nav-item">
-                    <a class="nav-link" href="userlist.php">User List</a>
+                    <a class="nav-link" href="userlist.php">Member List</a>
                 </li>
 				<li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
