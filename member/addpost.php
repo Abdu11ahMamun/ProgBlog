@@ -1,4 +1,10 @@
-
+<?php
+	require_once('dbconfig.php');
+	$connect = mysqli_connect( HOST, USER, PASS, DB )
+		or die("Can not connect");	
+        session_start();
+	
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Post</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
@@ -64,8 +70,7 @@
                                 <label>Category</label>
                             </td>
                             <td>
-                    
-                                    <option value="<?php echo $result['id']; ?>"><?php echo $result['name']; ?></option>
+                              
                                 </select>
                             </td>
                         </tr>
