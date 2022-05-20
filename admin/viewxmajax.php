@@ -25,24 +25,14 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="home.php">Dashboard</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.php">User Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="inbox.php">Inbox</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="postlist.php">Visit Website</a>
-                </li>
-
-                <li class="nav-item">
+            
 				<?php //if(Session::get('userRole')=='1'){ ?>
                     <a class="nav-link" href="adduser.php">Add User</a>
 					<?php //} ?>
 				
 				</li>
                 <li class="nav-item">
-                    <a class="nav-link" href="userlist.php">User List</a>
+                    <a class="nav-link" href="userlist.php">Member List</a>
                 </li>
 				<li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
@@ -53,11 +43,10 @@
         <div class="container">
     <br>
     <a href="examlist.php"><input class="btn btn-success"id="home" type="button" name="" value="Exam List"></a> <br> <br>
-		<div><button class="btn-warning" id="btnChange">View Exam</button></div>
+		<div><button class="btn-warning" id="btnChange">View Question Details</button></div>
         <br>
     <p class="form-control" id="p1"> Exam ID:</p>
 		<p class="form-control" id="p2">Exam Title:</p>
-		<p class="form-control" id="p3">Exam Date And Time:</p>
 		<p class="form-control" id="p4">Question:</p>
     <p class="form-control" id="p5">Solution:</p>
     <p class="form-control" id="p6">Point:</p>
@@ -74,14 +63,12 @@
             .then(json => {
                 let p1 = document.querySelector("#p1");
                 let p2 = document.querySelector("#p2");
-                let p3 = document.querySelector("#p3");
         let p4 = document.querySelector("#p4");
         let p5 = document.querySelector("#p5");
         let p6 = document.querySelector("#p6");
 
                 p1.innerHTML ="Exam ID: " +json['content'][0]['exam_id'];
                 p2.innerHTML ="Exam Title: " +json['content'][0]['exam_title'];
-                p3.innerHTML ="Exam Date And Time: " +json['content'][0]['exam_datetime'];
         p4.innerHTML ="Question: " +json['content'][0]['question'];
         p5.innerHTML ="Solution:" +json['content'][0]['solution'];
         p6.innerHTML ="Point: " +json['content'][0]['point'];
