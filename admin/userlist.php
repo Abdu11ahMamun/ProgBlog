@@ -77,9 +77,9 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
                         <h3 class="panel-title" >Member List</h3>
                         
 
-                        <a href="viewuser.php" class="btn btn-success"  >View User</a>
+                        <a href="viewuser.php" class="btn btn-success"  >View Member</a>
 
-                        <a href="deleteuser.php" class="btn btn-success"  >Delete User</a>
+                        <a href="deleteuser.php" class="btn btn-success"  >Delete Member</a>
                     </div>
                 </div>
             </div>

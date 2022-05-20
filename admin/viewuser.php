@@ -41,9 +41,9 @@
     </nav>
         <div class="container">
     <br>
-	<h3 class="text-center">View User Profile</h3>
-    <a href="userlist.php" ><input class="btn btn-danger" id="home" type="button" name="" value="User List"></a> <br><br>
-		<button id="btnChange" class="btn btn-warning">View User</button>
+	<h3 class="text-center">View Member Profile</h3>
+    <a href="userlist.php" ><input class="btn btn-danger" id="home" type="button" name="" value="Member List"></a> <br><br>
+		<button id="btnChange" class="btn btn-warning">View Member</button>
 
 		<br>
 		<br>
