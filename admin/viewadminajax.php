@@ -42,6 +42,18 @@
             </ul>
         </div>
     </nav>
-        
+        <div class="container">
+    <br>
+    <a href="adminlist.php"><input class="btn btn-danger" id="home" type="button" name="" value="User List"></a> <br><br>
+		<div><button id="btnChange" class="btn btn-warning">View User</button></div> <br>	
+		
+        <p id="p1" class="text-info"> ID:</p>
+		<p id="p2" class="text-info">User Name:</p>
+		<p id="p3" class="text-info">Email:</p>
+		<p id="p4" class="text-info">Role:</p>
+		
+
+		
+	
 	</body>
 </html>
