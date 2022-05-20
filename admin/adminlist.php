@@ -83,9 +83,9 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
                         <h3 class="panel-title" >User List</h3>
                         
 
-                        <a href="viewuser.php" class="btn btn-success"  >View User</a>
+                        <a href="viewadminajax.php" class="btn btn-success"  >View User</a>
 
-                        <a href="deleteuser.php" class="btn btn-success"  >Delete User</a>
+                        
                     </div>
                 </div>
             </div>
