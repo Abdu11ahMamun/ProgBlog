@@ -6,7 +6,17 @@
 
 	
 
-			
+			$per_page = 3;
+			if(isset($_GET["page"])){
+				$page = $_GET["page"];
+			}else{
+				$page=1;
+			}
+			$start_from=($page-1) * $per_page;
+		
+
+	$post = mysqli_query( $connect, "SELECT * FROM tbl_post limit $start_from,$per_page" )
+		or die("Can not execute query");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +69,73 @@
 
 
 
+    <br>
+    <br>
+    <br>
+
+
+
+
+    <div class="container">
+	
+	<?php
+	if($post){
+	while($result=$post->fetch_assoc()){
+	?>
+
+	<div class=" ">
+
+	<div class="card text-center">
+  <div class="card-header">
+  <h5 class="card-title"><a href="post.php?id=<?php echo $result['id'];?>"><?php echo $result['title'];?></a></h5>
+  <p class="card-title">By <?php echo $result['author'];?></a></p>
+  </div>
+  <div class="card-body">
+  <img class="card-img-top" src="<?php echo $result['image']?>" style="width:150px; height:150px" >
+    <p class="card-text"><?php echo $result['body'];?></p>
+    <a href="post.php?id=<?php echo $result['id'];?>" class="btn btn-primary">Read More</a>
+  </div>
+  <div class="card-footer text-muted">
+    <p><?php $result['date'];?></p>
+  </div>
+</div>
+<br>
+<br>
+	
+		<?php } ?> <!--END WHILE LOOP-->
+
+		<!--Pagination-->
+		<?php 
+		
+		$result= mysqli_query( $connect, "SELECT * FROM tbl_post" )
+		or die("Can not execute query");
+		$total_rows= mysqli_num_rows($result);
+		$total_pages=ceil($total_rows/$per_page);
+		?>
+		
+
+		<nav aria-label="Page navigation example">
+ 		 <ul class="pagination justify-content-center">
+    	<li class="page-item ">
+			<?php
+			echo "<span class='page-link'><a href='memberhome.php?page=1'>".'First Page'."</a>";
+			?>	
+
+    		</li>
+		<?php	for($i=1;$i<=$total_pages;$i++){
+			echo "<li class='page-item'><a class='page-link' href='memberhome.php?page=".$i."'>".$i."</a> </li>" ;
+		}?>
+			<?php echo "<li class='page-item'><a class='page-link'  href='memberhome.php?page=$total_pages'>".'Last Page'."</a> </li>" ; ?>
+		
+		</ul>
+		</nav>
+
+		<?php 
+}
+		?>
     
+
+	</div>
 
 
 
