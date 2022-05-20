@@ -57,7 +57,7 @@
 
 <div class="container">
     <br>
-<?php
+    <?php
     if (isset($_POST['title']) && !empty($_POST['cat']) && !empty($_POST['tags'])&&isset($_POST['author'])){
         $title=$_POST['title'];
         $cat=$_POST['cat'];
@@ -67,7 +67,7 @@
 
         if(isset($_FILES['image'])){
             $var4=$_FILES['image'];
-            move_uploaded_file($var4['tmp_name'],"../img/$title.jpg");
+            move_uploaded_file($var4['tmp_name'],"../images/$title.jpg");
         }
         
 
@@ -75,7 +75,7 @@
         if (empty($title)||empty($cat)||empty($body)||empty($tags)||empty($author)){
                 echo "<span class='error'>Field must not be empty ! </span>";//3
         }else{
-            $inserted_rows = mysqli_query( $connect, "INSERT INTO tbl_post(cat, title, body, author, tags, image, userid) VALUES('$cat','$title','$body','$author','$tags','../img/$title.jpg','4')")
+            $inserted_rows = mysqli_query( $connect, "INSERT INTO tbl_post(cat, title, body, author, tags, image) VALUES('$cat','$title','$body','$author','$tags','../images/$title.jpg')")
             or die("Can not execute query");
             if ($inserted_rows) {
                 echo "<span class='success'>Post Inserted Successfully. </span>";
