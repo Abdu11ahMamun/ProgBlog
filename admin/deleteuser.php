@@ -47,9 +47,9 @@
 
 
 
-	<h3 class="text-center">Delete User Profile</h3>
-    <a href="userlist.php"><input class="btn btn-success" id="home" type="button" name="" value="User List"></a> <br><br>
-		<div><button class="btn btn-danger" id="btnChange">Delete User</button></div>	
+	<h3 class="text-center">Delete Member Profile</h3>
+    <a href="userlist.php"><input class="btn btn-success" id="home" type="button" name="" value="Member List"></a> <br><br>
+		<div><button class="btn btn-danger" id="btnChange">Delete Member</button></div>	
 		<p class="text-info" id="p2"></p>
 	</div>	
 	<script>
