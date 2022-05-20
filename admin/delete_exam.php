@@ -42,8 +42,26 @@
     </nav>
         <div class="container">
     <br>
-    
+    <a href="examlist.php"><input class="btn btn-success" id="home" type="button" name="" value="Exam List"></a> <br><br>
+		<div><button class="btn btn-danger" id="btnChange">Delete Question</button></div>
 
+		<p id="p1"></p>
+
+	<script>
+
+		let btnChange = document.querySelector("#btnChange");
+
+		btnChange.addEventListener('click', () => {
+	  let exam_id = prompt("Please enter the exam id:");
+		fetch('http://localhost/ProgBlog/admin/delete_exam_backend.php?exam_id='+exam_id )
+			.then(response => response.json())
+			.then(json => {
+				let p1 = document.querySelector("#p1");
+				p1.innerHTML =""+ json['content'];
+			})
+		});
+
+	</script>
     </div>
 
     </body>
