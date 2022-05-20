@@ -8,5 +8,14 @@
         $status = 'ERROR';
         $content = mysqli_connect_error();
         }
-  
+    $query="INSERT INTO tbl_category(name)  VALUES ('$name')";
+    if ($result = mysqli_query($link, $query)) {
+
+        $content="Inserted successfully";
+        }else{
+            $content="Cannot insert the cat";
+        }
+    $data = ["status" => $status, "content" => $content];
+    header('Content-type: application/json');
+    echo json_encode($data); 
 ?>
