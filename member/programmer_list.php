@@ -84,6 +84,7 @@ $i=1;
 $query = "SELECT * FROM tbl_member WHERE total_points>0 ORDER BY total_points DESC;";
 $post = mysqli_query( $connect, $query )
 		or die("Can not execute query");
+$i=1;        
 if($post){
 while($result=$post->fetch_assoc()){
 ?>
@@ -97,7 +98,7 @@ while($result=$post->fetch_assoc()){
 </tr>
 
 
-<?php     }
+<?php  $i++ ;  }
 }
 ?>
                         </tbody>
