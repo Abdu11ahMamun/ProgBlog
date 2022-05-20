@@ -52,6 +52,44 @@ $i=1;
         </div>
     </nav>
 
+<div class="container">
+    <br>
+
+    
+            <div class="card-body">
+            <div class="table-responsive">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="panel-title text-center text-warning" >Top Programmers List</h3>
+                    </div>
+                </div>
+            </div>
+                    <table id="exam_data_table" class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>SL</th>
+                                <th>Name</th>
+                                
+                                <th>Email</th>
+                                <th>Points</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+
+                       
+
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+          </div>
+    </div>
+
+
 
 
 </body>
