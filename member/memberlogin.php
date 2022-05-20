@@ -18,7 +18,23 @@
     <title>Programming Hub</title>
 </head>
 <body>
+<div class="containter ">
+    <div class="row mt-5 ">
+        <div class="card col-5 offset-lg-4 hero-card">
+            <h2 class="text-dark display-4 d-flex justify-content-center">Member Login</h2>
+            <hr>
+            <form action="" method="POST" class="form-group">
+                <label for="user">Username</label>:
+                <input class="form-control" type="text" id="Username" name="username" placeholder="Username" required><br>
+                
+                <label for="password">Password</label>:
+                <input class="form-control" type="Password" id="password" name="password" placeholder="Password" required><br>
+                <input href="" class="btn btn-danger col-2 " type="submit" value="Login"><br><br>
+            </form>
 
+        </div>
+    </div>
+</div>
 </body>
     
 </html>
