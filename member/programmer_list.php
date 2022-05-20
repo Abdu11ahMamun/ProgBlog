@@ -87,7 +87,20 @@ $post = mysqli_query( $connect, $query )
 if($post){
 while($result=$post->fetch_assoc()){
 ?>
-                    </tbody>
+
+<tr >
+    
+<td><?php echo $i; ?></td>
+<td><?php echo $result['name']; ?></td>
+<td><?php echo $result['email']; ?></td>
+<td><?php echo $result['total_points']; ?></td>
+</tr>
+
+
+<?php     }
+}
+?>
+                        </tbody>
                     </table>
                 </div>
                 </div>
