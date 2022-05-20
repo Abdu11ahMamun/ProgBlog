@@ -81,7 +81,14 @@
                        {
                         $catinsert = mysqli_query( $connect, "INSERT INTO tbl_user(username,password,role)  VALUES ('$username','$password','$role')")
                         or die("Can not execute query");
-                    
+                         if($catinsert)
+                         {
+                            echo "<span class='success'>User Created Successfully </span>";
+                         }
+                         else
+                         {
+                            echo "<span class='error'>User Not created</span>";
+                         }
 
                        }
                    }
