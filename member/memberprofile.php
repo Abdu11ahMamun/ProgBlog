@@ -95,6 +95,17 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
 						</tr>
 					</thead>
 					<tbody>
+<?php
+    session_start();
+	$username=$_SESSION['username'];
+	$post = mysqli_query( $connect, "SELECT * from tbl_member WHERE username='$username'")
+		or die("Can not execute query");
+if($post){   
+			
+			while ($result = $post->fetch_assoc()) {
+			
+?>
+
 
                        
 					</tbody>
