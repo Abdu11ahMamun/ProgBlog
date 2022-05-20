@@ -6,7 +6,14 @@
 	
 
 
-       
+        if($_SERVER['REQUEST_METHOD'] =='POST'){
+			$username=$_POST['username'];
+            
+			$password=md5($_POST['password']);
+            $result = mysqli_query( $connect, "SELECT * FROM tbl_user WHERE username='$username'  AND password='$password'")
+            or die("Can not execute query");
+			
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
