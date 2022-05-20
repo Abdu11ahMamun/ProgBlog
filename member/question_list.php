@@ -1,4 +1,9 @@
-
+<?php
+require_once('dbconfig.php');
+$connect = mysqli_connect( HOST, USER, PASS, DB )
+    or die("Can not connect");	
+$i=1;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,7 +83,29 @@
 
 
                        
-                    
+                    <?php
+                    $query = "SELECT * from exam_table ORDER By exam_datatime DESC;";
+                    $post = mysqli_query( $connect, $query )
+                            or die("Can not execute query");
+                    if($post){
+                    while($result=$post->fetch_assoc()){
+                    ?>
+
+                    <tr >
+                        
+                    <td><?php echo $i; ?></td>
+                    <td><?php echo $result['exam_title']; ?></td>
+                    <td><?php echo $result['exam_datatime']; ?></td>
+                    <td><?php echo $result['question']; ?></td>
+                        <td><?php echo $result['point']; ?></td>
+
+                    <td><a href="solve.php?questionid=<?php echo $result['exam_id']; ?>" class="btn btn-success">Solve</a> </td> 
+                    </tr>
+
+
+<?php     }
+}
+?>
                         </tbody>
                     </table>
                 </div>
