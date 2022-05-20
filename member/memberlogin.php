@@ -10,7 +10,7 @@
 			$username=$_POST['username'];
             
 			$password=md5($_POST['password']);
-            $result = mysqli_query( $connect, "SELECT * FROM tbl_user WHERE username='$username'  AND password='$password'")
+            $result = mysqli_query( $connect, "SELECT * FROM tbl_member WHERE username='$username'  AND password='$password'")
             or die("Can not execute query");
 			if($result!=false){
 				$value=mysqli_fetch_array($result);
