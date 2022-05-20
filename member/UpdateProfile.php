@@ -56,7 +56,45 @@
 
 
 
-    
+    <div class="container">
+    <br>
+      
+                 <form class='form' action="" method="post">
+                     <?php
+                        $username=$_SESSION['username'];
+                        $query ="SELECT * FROM tbl_member WHERE username = '$username'";
+                        $show_data=mysqli_query( $connect,$query);
+                        $arr=mysqli_fetch_array($show_data);
+                     ?>
+                    <table  class="form-control">
+                    <tr>
+                            <td><label>Name</label></td>
+                            <td>
+                                <input class='form-control' type="text" name="name" value="<?php echo $arr['name']; ?>"  />
+                            </td>
+                        </tr>					
+                        <tr>
+                            <td><label>Email</label></td>
+                            <td>
+                                <input class='form-control' type="email" name="email" value="<?php echo $arr['email']; ?>"  />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Password</label></td>
+                            <td>
+                                <input class='form-control' type="password" name="password" value="<?php echo $arr['password']; ?>"/>
+                            </td>
+                        </tr>
+                        
+
+						<tr> 
+                            <td></td>
+                            <td>
+                                <input class='btn btn-danger' type="submit" name="submit" Value="Update" />
+                            </td>
+                        </tr>
+                    </table>
+                    </form>
             
 </body>
 </html>
