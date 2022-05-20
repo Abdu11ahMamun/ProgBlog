@@ -30,23 +30,10 @@ $i=1;
                     <a class="nav-link" href="home.php">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="profile.php">User Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="inbox.php">Inbox</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="postlist.php">Visit Website</a>
-                </li>
-
-                <li class="nav-item">
-				<?php //if(Session::get('userRole')=='1'){ ?>
-                    <a class="nav-link" href="adduser.php">Add User</a>
-					<?php //} ?>
-				
+                    <a class="nav-link" href="adduser.php">Add User</a>				
 				</li>
                 <li class="nav-item">
-                    <a class="nav-link" href="userlist.php">User List</a>
+                    <a class="nav-link" href="userlist.php">Member List</a>
                 </li>
 				<li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
@@ -58,11 +45,11 @@ $i=1;
 <div class="container">
     <br>
 
-        <div class="card text-center">
+    <div class="card text-center">
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
-                      <a class="nav-link  " href="home.php">Post list</a>
+                      <a class="nav-link active " href="home.php">Post list</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link " href="catlist.php">Category List</a>
@@ -72,7 +59,7 @@ $i=1;
                       <a class="nav-link " href="userlist.php">User List</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" href="examlist.php">Exam List</a>
+                      <a class="nav-link " href="examlist.php">Exam List</a>
                     </li>
                     
                   </ul>
@@ -84,6 +71,8 @@ $i=1;
                     <div class="col-md-12">
                         <h3 class="panel-title" >Exam List</h3>
                         <a href="add_exam.php" class="btn btn-success"  >Add Exam</a>
+                        <a href="viewxmajax.php" class="btn btn-success"  >View Exam</a>
+                        <a href="delete_exam.php" class="btn btn-success" >Delete Exam</a>
                     </div>
                 </div>
             </div>
@@ -91,89 +80,43 @@ $i=1;
                         <thead>
                             <tr>
                                 <th>SL</th>
+                                <th>Exam Id</th>
                                 <th>Exam Title</th>
-                                <!-- <th>Question</th> -->
-                                <th>Create Date</th>
-                                <th>Question</th>
-                                <th>Solution</th>
-                                <th>points</th>
-                                <th>Action</th>
                              
                             </tr>
                         </thead>
                         <tbody>
 
 
-                        <?php
-	//Category Delete
-	if (isset($_GET['delexamid'])){
-		$delid= $_GET['delexamid'];
-	
-        $delquey = mysqli_query( $connect, "DELETE from exam_table where exam_id='$delid' ")
-		or die("Can not execute query");
-        
-	
-		if( $delquey )
-				{
-				echo "<span class='success'>Post Deleted Successfully </span>";
-				}
-				else
-				{
-				echo "<span class='error'>Post Not Deleted  ! </span>";
-				}
-	}
-?>
-                       
 <?php
-error_reporting(0);
-
-$link = mysqli_connect("localhost", "root", "", "tbl_blog");
-$status = 'OK';
-if (mysqli_connect_errno()) {
-    $status = 'ERROR';
-    $content = mysqli_connect_error();
-}
-
 $query = "SELECT * from exam_table ORDER By exam_datatime DESC;";
 
-if ($result = mysqli_query($link, $query)) {
-    /* fetch associative array */
-    while ($row = mysqli_fetch_assoc($result)) {
-
-
+$post = mysqli_query( $connect, $query)
+or die("Can not execute query");
+if($post){   
+    $i=0;
+    while ($row = $post->fetch_assoc()) {
+    $i++;
 ?>
-
 <tr >
     
 <td><?php echo $i; ?></td>
+<td><?php echo $row['exam_id']; ?></td>
 <td><?php echo $row['exam_title']; ?></td>
-<td><?php echo $row['exam_datatime']; ?></td>
-<td><?php echo $row['question']; ?></td>
-	<td><?php echo $row['solution']; ?></td>
-	<td><?php echo $row['point']; ?></td>
 
-<td><a href="viewexam.php?viewexamid=<?php echo $row['exam_id']; ?>">View</a> 
-||<a href="editexam.php?editexamid=<?php echo $row['exam_id']; ?>">Edit</a> 
-|| <a onclick="return confirm('Are you sure to Delete this post?')" href="?delexamid=<?php echo $row['exam_id']; ?>">Delete</a>
 </td> 
 </tr>
 
-<?php// } } ?>
+<?php } } ?>
 
-<?php     }
-}
-//$data = ["status" => $status, "content" => $content];
 
-header('Content-type: application/json');
-echo json_encode($data); // get all products in json format.
-?>
-                        </tbody>
-                    </table>
-                </div>
-                </div>
-            </div>
-          </div>
+        </tbody>
+    </table>
+</div>
+</div>
     </div>
+    </div>
+</div>
 
 
 

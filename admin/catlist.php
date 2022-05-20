@@ -39,7 +39,7 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
 				
 				</li>
                 <li class="nav-item">
-                    <a class="nav-link" href="userlist.php">User List</a>
+                    <a class="nav-link" href="userlist.php">Member List</a>
                 </li>
 				<li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
@@ -62,7 +62,7 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
                     </li>
 
                     <li class="nav-item">
-                      <a class="nav-link " href="userlist.php">User List</a>
+                      <a class="nav-link " href="userlist.php">Member List</a>
                     </li>
                     
                   </ul>
@@ -118,7 +118,7 @@ $connect = mysqli_connect( HOST, USER, PASS, DB )
 						<tr >
 							<td><?php echo $i; ?></td>
 							<td><?php echo $result['name']; ?></td>
-							<td><a href="editcat.php?catid=<?php echo $result['id']; ?>">Edit</a>||<a onclick="return confirm ('Do you really want to delete!'); "href="?delcat=<?php echo $result['id'];?>">Delete</a></td>
+							<td><a onclick="return confirm ('Do you really want to delete!'); "href="?delcat=<?php echo $result['id'];?>">Delete</a></td>
 						</tr>
                         <?php }} ?>
                         </thead>                            
