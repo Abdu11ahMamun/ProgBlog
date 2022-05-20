@@ -24,10 +24,10 @@
                    
 
 				}else{
-					echo "<span style='color:red;font-size:15px;'> No result found...</span>";
+					echo "<span style='color:red;font-size:15px;'> No result found.</span>";
 				}
 			}else{
-				echo "<span style='color:red;font-size:15px;'> Name or password not matched...</span>";
+				echo "<span style='color:red;font-size:15px;'> Name or password not matched.</span>";
 			}
         }
 ?>
