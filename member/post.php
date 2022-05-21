@@ -83,7 +83,7 @@
             <?php echo $result['title']?>
         </div>
         <div class="card-body">
-            <img src="admin/<?php echo $result['image']?>" alt="post image" style="width:300px; height:300px"/>
+            <img src="../images/<?php echo $result['image']?>" alt="post image" style="width:300px; height:300px"/>
             <p class="card-text">
             <?php echo $result['body']?>
             </p>

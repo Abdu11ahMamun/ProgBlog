@@ -1,8 +1,9 @@
 <?php
+        session_start();
+
 	require_once('dbconfig.php');
 	$connect = mysqli_connect( HOST, USER, PASS, DB )
-		or die("Can not connect");	
-        session_start();
+		or die("Can not connect");		
 	
 ?>
 <?php 
