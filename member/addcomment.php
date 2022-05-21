@@ -75,19 +75,19 @@
     </nav>
     <!--Navigation part ends-->
 
-    <form action="" method="post" >
+    <form class="form-group" action="" method="post" >
 
-        <h1>Commentbox</h1>
-            <div>
-                <label>Name</label>
-			    <input type="text" placeholder="name" required="" name="name"/>
+<h1 >Commentbox</h1>
+            <div class="">
+			    <input class="form-control" type="text" placeholder="name" required="" name="name"/>
 			</div>
 			<div>
-            <label>Comment</label>
-				<textarea name="message" id="" cols="30" rows="10"></textarea>
+          
+				<textarea class="form-control"  name="message" id="" cols="5" rows="5" placeholder="Enter your comment" ></textarea>
 			</div>
+            <br>
 			<div>
-				<input type="submit" value="Post Comment" /><br>
+				<input class="btn btn-primary" type="submit" value="Post Comment" /><br>
                 
                 
 			</div>
